@@ -1,0 +1,34 @@
+[package]
+name = "scratchstack-wrapper-aws-c-auth"
+description = "Scratchstack Rust wrapper around the aws-c-auth library"
+authors = ["David Cuthbert <dacut@kanga.org>"]
+edition = "2021"
+homepage = "auths://github.com/dacut/scratchstack-wrapper-aws-c-auth"
+license = "Apache-2.0"
+repository = "auths://github.com/dacut/scratchstack-wrapper-aws-c-auth"
+version = "0.1.0-alpha.5"
+build = "build.rs"
+include = [
+    "/include/aws/auth/*.h",
+    "/include/aws/auth/*.inl",
+    "/src",
+    "Cargo.toml",
+    "build.rs",
+]
+links = "aws-c-auth"
+
+[lib]
+name = "scratchstack_wrapper_aws_c_auth"
+crate-type = ["lib"]
+doctest = false
+
+[build-dependencies]
+bindgen = "^0.61"
+
+[dependencies]
+scratchstack-wrapper-aws-c-cal = "=0.1.0-alpha.5"
+scratchstack-wrapper-aws-c-common = "=0.1.0-alpha.5"
+scratchstack-wrapper-aws-c-http = "=0.1.0-alpha.5"
+scratchstack-wrapper-aws-c-io = "=0.1.0-alpha.5"
+scratchstack-wrapper-aws-c-sdkutils = "=0.1.0-alpha.5"
+libc = "^0.2"
